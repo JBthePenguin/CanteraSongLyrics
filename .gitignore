@@ -1,0 +1,9 @@
+env/
+
+canteradjango/__pycache__/
+
+songapp/__pycache__/
+
+songapp/migrations/__pycache__/
+
+songapp/migrations/0*.py
