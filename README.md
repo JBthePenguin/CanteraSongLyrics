@@ -37,7 +37,7 @@ Create a "superuser" account:
 (env)$ python manage.py createsuperuser
 ```
 ## Using
-## Start the application**
+### Start the application
 ```shell
 (env)$ python manage.py runserver
 ```
