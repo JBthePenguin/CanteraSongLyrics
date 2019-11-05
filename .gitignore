@@ -7,3 +7,9 @@ songapp/__pycache__/
 songapp/migrations/__pycache__/
 
 songapp/migrations/0*.py
+
+eventapp/__pycache__/
+
+eventapp/migrations/__pycache__/
+
+eventapp/migrations/0*.py

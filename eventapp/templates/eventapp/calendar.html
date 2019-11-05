@@ -1,0 +1,21 @@
+{% extends 'songapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- right part -->
+        <div class="col-sm-11 col-md-6 mx-left">
+            <h4 class="text-center m-3">Évènements</h4>
+            <div class="clearfix">
+    <a class="btn btn-info left" href="/evenements/{{ prev_month }}/"> Previous Month </a>
+    <a class="btn btn-info right" href="/evenements/{{ next_month }}/"> Next Month </a>
+</div>
+            {{ calendar|safe }}
+        </div>
+        <!---->
+    </div>
+</div>
+{% endblock %}
