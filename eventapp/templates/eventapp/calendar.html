@@ -3,19 +3,19 @@
 {% load static %}
 
 {% block content %}
-
-<div class="container-fluid">
-    <div class="row">
-        <!-- right part -->
-        <div class="col-sm-11 col-md-6 mx-left">
-            <h4 class="text-center m-3">Évènements</h4>
-            <div class="clearfix">
-    <a class="btn btn-info left" href="/evenements/{{ prev_month }}/"> Previous Month </a>
-    <a class="btn btn-info right" href="/evenements/{{ next_month }}/"> Next Month </a>
-</div>
+<!-- calendar -->
+<div class="row">
+    <div class="col-sm-11 col-md-12 mx-auto">
+        <div class="card text-white bg-dark m-3">
+                <div class="card-header text-dark bg-warning text-center">
+                    <h4 class="">
+                        <a class="btn btn-warning left" href="/evenements/{{ prev_month }}/"><img src="{% static 'img/preview.png' %}"></a>Évènements<a class="btn btn-warning right" href="/evenements/{{ next_month }}/"><img src="{% static 'img/next.png' %}"></a>
+                    </h4>
+                </div>
+        <div class="card-body text-center">
             {{ calendar|safe }}
         </div>
-        <!---->
     </div>
 </div>
+<!---->
 {% endblock %}

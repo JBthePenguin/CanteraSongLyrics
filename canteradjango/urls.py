@@ -21,6 +21,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('songapp.urls')),
+    path('', include('eventapp.urls')),
 ]
 
 if settings.DEBUG:

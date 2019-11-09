@@ -3,8 +3,10 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-<a class="btn btn-info left" href="{% url 'song' %}"> Chansons</a>
-<a class="btn btn-info right" href="/evenements/{{ month }}/">Évènements </a>
+<div class="row mx-1 my-3">
+    <a class="btn btn-dark col-12 col-md-8 mx-auto" href="{% url 'song' %}"><h5 class="text-warning">Chansons</h5><p>Liste de chansons avec les paroles pour chacune d'elles</p></a>
+</div>
+<div class="row mx-1 my-3">
+    <a class="btn btn-dark col-12 col-md-8 mx-auto" href="/evenements/{{ month_navbar }}/"><h5 class="text-warning">Évènements</h5><p>Calendrier répertoriant les évènements</p></a>
 </div>
 {% endblock %}

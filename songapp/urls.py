@@ -4,7 +4,7 @@ from eventapp.views import events
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('paroles-<int:song_id>/', views.lyrics),
     path('chansons/', views.song, name='song'),
+    path('paroles-<int:song_id>/', views.lyrics),
     path('evenements/<str:month>/', events),
 ]

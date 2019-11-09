@@ -1,9 +1,9 @@
 from django.shortcuts import render
 import calendar
-from django.utils import timezone
 from datetime import timedelta
 import datetime
 from eventapp.utils import Calendar
+from songapp.views import MONTH
 
 
 def prev_month(d):
@@ -22,14 +22,14 @@ def next_month(d):
 
 
 def events(request, month):
-    # day = timezone.now()
-    # print(month)
-    month = month.split('-')
-    day = datetime.datetime(int(month[0]), int(month[1]), 1)
+    month_year = month.split('-')
+    day = datetime.datetime(int(month_year[0]), int(month_year[1]), 1)
     event_calendar = Calendar(day.year, day.month)
     context = {
+        'event_navbar': 'active',
         'calendar': event_calendar.formatmonth(),
+        'month_navbar': MONTH,
         'prev_month': prev_month(day),
         'next_month': next_month(day),
     }
-    return render(request, 'eventapp/calendar.html', context)
+    return render(request, 'eventapp/calendar2.html', context)

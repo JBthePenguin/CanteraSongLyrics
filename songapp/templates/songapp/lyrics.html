@@ -5,14 +5,14 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-sm-6 mx-auto">
+        <div class="col-md-8 mx-auto">
             <div class="card text-white bg-dark m-3">
-                <div class="card-header text-center">
-                    {{ song.title }}
+                <div class="card-header text-dark bg-warning text-center">
+                    <h5>{{ song.title }}</h5>
                 </div>
                 <div class="card-body text-center">
                     <p class="card-text">{{ song.lyrics|linebreaks }}</p>
-                    <a href="{% url 'index' %}" class="btn btn-danger">Retour</a>
+                    <a href="{% url 'song' %}" class="btn btn-warning">Retour</a>
                 </div>
             </div>
         </div>
