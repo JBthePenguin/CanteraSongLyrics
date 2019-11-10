@@ -3,18 +3,42 @@
 {% load static %}
 
 {% block content %}
-<!-- calendar -->
-<div class="row">
-    <div class="col-sm-11 col-md-12 mx-auto">
-        <div class="card text-white bg-dark m-3">
-                <div class="card-header text-dark bg-warning text-center">
-                    <h4 class="">
-                        <a class="btn btn-warning left" href="/evenements/{{ prev_month }}/"><img src="{% static 'img/preview.png' %}"></a>Évènements<a class="btn btn-warning right" href="/evenements/{{ next_month }}/"><img src="{% static 'img/next.png' %}"></a>
-                    </h4>
-                </div>
-        <div class="card-body text-center">
+<!-- calendar and events -->
+<div class="card text-white bg-dark mx-auto mt-2">
+    <div class="card-header text-dark bg-warning text-center">
+        <h4>
+            <a class="btn btn-warning left" href="/evenements/{{ prev_month }}/"><img src="{% static 'img/preview.png' %}"></a>
+            Évènements
+            <a class="btn btn-warning right" href="/evenements/{{ next_month }}/"><img src="{% static 'img/next.png' %}"></a>
+        </h4>
+    </div>
+    <div class="row card-body">
+        <!-- calendar -->
+        <div class="col-12 col-md-6 text-center mb-2">
             {{ calendar|safe }}
         </div>
+        <!-- -->
+        <!-- card for each event for this month -->
+        <div class="col-12 col-md-6 text-center">
+            <!--<div class="container-fluid">-->
+                <div class="row">
+                    {% for event in events %}
+                        <div class="col-12 mb-2">
+                            <div class="card text-dark bg-warning">
+                                <div class="card-header text-left">
+                                {{ event.start_time|date:'D d F Y à H\hi' }}
+                                </div>
+                                <div class="card-body text-white bg-dark">
+                                    <h5 class="card-title">{{ event.title }}</h5>
+                                    <p class="card-text text-left">{{ event.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            <!--</div>-->
+        </div>
+        <!---->
     </div>
 </div>
 <!---->
