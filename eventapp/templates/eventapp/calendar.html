@@ -4,7 +4,7 @@
 
 {% block content %}
 <!-- calendar and events -->
-<div class="card text-white bg-dark mx-auto mt-2">
+<div class="card text-white bg-dark mx-auto mt-3 mb-3">
     <div class="card-header text-dark bg-warning text-center">
         <h4>
             <a class="btn btn-warning left" href="/evenements/{{ prev_month }}/"><img src="{% static 'img/preview.png' %}"></a>
@@ -18,10 +18,18 @@
             {{ calendar|safe }}
         </div>
         <!-- -->
-        <!-- card for each event for this month -->
         <div class="col-12 col-md-6 text-center">
-            <!--<div class="container-fluid">-->
-                <div class="row">
+            <div class="row">
+                {% if events.count == 0 %}
+                    <!-- no event -->
+                    <div class="col-12">
+                        <div class="alert alert-warning text-dark text-center mx-auto">
+                            Pas d'évènement prévu.
+                        </div>
+                    </div>
+                    <!---->
+                {% else %}
+                    <!-- card for each event for this month -->
                     {% for event in events %}
                         <div class="col-12 mb-2">
                             <div class="card text-dark bg-warning">
@@ -35,10 +43,10 @@
                             </div>
                         </div>
                     {% endfor %}
-                </div>
-            <!--</div>-->
+                    <!---->
+                {% endif %}
+            </div>
         </div>
-        <!---->
     </div>
 </div>
 <!---->
