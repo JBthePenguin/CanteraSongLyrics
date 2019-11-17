@@ -34,11 +34,11 @@
                         <div class="col-12 mb-2">
                             <div class="card text-dark bg-warning">
                                 <div class="card-header text-left">
-                                {{ event.start_time|date:'D d F Y à H\hi' }}
+                                    {{ event.start_time|date:'D d F Y à H\hi' }}
                                 </div>
-                                <div class="card-body text-white bg-dark">
-                                    <h5 class="card-title">{{ event.title }}</h5>
-                                    <p class="card-text text-left">{{ event.description }}</p>
+                                <div class="card-body text-white bg-dark text-left">
+                                    <h5 class="card-title text-center">{{ event.title }}</h5>
+                                    <p class="card-text">{{ event.description|linebreaks }}</p>
                                 </div>
                             </div>
                         </div>

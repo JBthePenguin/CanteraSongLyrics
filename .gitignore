@@ -13,3 +13,9 @@ eventapp/__pycache__/
 eventapp/migrations/__pycache__/
 
 eventapp/migrations/0*.py
+
+managerapp/__pycache__/
+
+managerapp/migrations/__pycache__/
+
+managerapp/migrations/0*.py

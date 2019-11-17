@@ -24,6 +24,11 @@ urlpatterns = [
     path('', include('eventapp.urls')),
 ]
 
+# change titles of admin site
+admin.site.site_title = "Administration Cantera"
+admin.site.site_header = 'Administration Cantera'
+admin.site.index_title = "Interface d'administration"
+
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [

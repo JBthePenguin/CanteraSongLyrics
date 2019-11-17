@@ -9,5 +9,6 @@ class Event(models.Model):
         null=True, blank=True, default=None, verbose_name='date de fin')
 
     class Meta:
+        ordering = ['start_time']
         verbose_name = "Évènement"
         verbose_name_plural = "Évènements"
