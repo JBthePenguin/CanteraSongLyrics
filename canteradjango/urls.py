@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.urls import path, include
+from django.conf.urls import handler404
+from songapp.views import index, error_404
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('songapp.urls')),
-    path('', include('eventapp.urls')),
+    path('', index, name='index'),
+    path('chants/', include('songapp.urls')),
+    path('evenements/', include('eventapp.urls')),
 ]
 
 # change titles of admin site
@@ -34,3 +37,5 @@ if settings.DEBUG:
     urlpatterns = [
         path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
+
+handler404 = error_404

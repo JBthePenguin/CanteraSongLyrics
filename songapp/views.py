@@ -32,3 +32,7 @@ def lyrics(request, song_id):
         'month_navbar': MONTH,
     }
     return render(request, 'songapp/lyrics.html', context)
+
+
+def error_404(request, exception):
+    return render(request, 'error/404.html', status=404)
