@@ -1,6 +1,5 @@
 # Cantera Song Lyrics Web Application  *Django*
-**Web application with a list of songs and obtain the lyrics with a clic on the title.
-So, to install and use it :**
+**Web application with a list of songs with link to the lyrics, a calendar month by month with events. The admin site have three level access (superuser, Manager, Member). Superuser have all privileges. Member can add, update or delete song and event. Same for Manager who have also all privileges on Member.**
 
 ## Install
 ### Create a PostgreSQL database for the application and a new user

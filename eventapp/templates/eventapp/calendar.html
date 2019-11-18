@@ -35,6 +35,9 @@
                             <div class="card text-dark bg-warning">
                                 <div class="card-header text-left">
                                     {{ event.start_time|date:'D d F Y à H\hi' }}
+                                    {% if event.end_time is not None %}
+                                        <br>au {{ event.end_time|date:'D d F Y à H\hi' }}
+                                    {% endif %}
                                 </div>
                                 <div class="card-body text-white bg-dark text-left">
                                     <h5 class="card-title text-center">{{ event.title }}</h5>
