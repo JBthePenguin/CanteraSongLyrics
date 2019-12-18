@@ -40,7 +40,7 @@ Create a "superuser" account:
 ```shell
 (env)$ python manage.py runserver
 ```
-**NOW, with your favorite browser, go to this url [http://127.0.0.1:8000/](http://127.0.0.1:8000/) to use the application and [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin) for the admin site.**
+NOW, with your favorite browser, go to this url [http://127.0.0.1:8000/](http://127.0.0.1:8000/) to use the application and [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin) for the admin site where you can add Manager, Member, Song and Event.
 ###### :metal: If you want access to the custom 'error 404' page, you have to set *DEBUG = False* in *settings.py line 26*, and run the server in insecure mode:
 ```python
 DEBUG = False

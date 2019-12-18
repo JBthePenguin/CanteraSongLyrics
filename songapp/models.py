@@ -7,6 +7,9 @@ class Song(models.Model):
         error_messages={
             'unique': 'Un chant avec ce titre est déjà répertoriée'
         })
+    author = models.CharField(
+        db_index=True, max_length=255, verbose_name='auteur',
+        default="", blank=True)
     lyrics = models.TextField(verbose_name='paroles')
 
     class Meta:
